@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 import BookShelf from '../components/BookShelf';
-import books from '../utils/Books_LIST.mock';
 import separateByShelf from '../utils/separateByShelf';
 import {update, getAll} from '../utils/BooksAPI';
 
