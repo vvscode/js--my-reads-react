@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './BookCard.css';
+
 class BookCard extends Component {
   onChangeSelf(book, shelf) {
     this.props.updateBookShelf(book, shelf);
@@ -41,11 +43,7 @@ class BookCard extends Component {
         <div className="book-top">
           <div
             className="book-cover"
-            style={{
-            width: 128,
-            height: 193,
-            backgroundImage: `url("${imageLinks.smallThumbnail}")`
-          }}></div>
+            style={{ backgroundImage: `url("${imageLinks.smallThumbnail}")`}}></div>
           <div className="book-shelf-changer">
             <select
               value={shelf || 'none'}
