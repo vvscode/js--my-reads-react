@@ -43,6 +43,11 @@ body, .app {
   text-align: center;
 }
 
+.book-cover {
+  width: 128px;
+  height: 193px;
+}
+
 .open-search {
   position: fixed;
   right: 25px;

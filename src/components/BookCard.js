@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-import './BookCard.css';
-
 class BookCard extends Component {
   onChangeSelf(book, shelf) {
     this.props.updateBookShelf(book, shelf);
@@ -12,28 +10,9 @@ class BookCard extends Component {
       book,
       book: {
         title,
-        // subtitle,
         authors = [],
-        // publisher,
-        // publishedDate,
         description,
-        // industryIdentifiers,
-        // readingModes,
-        // pageCount,
-        // printType,
-        // categories,
-        // averageRating,
-        // ratingsCount,
-        // maturityRating,
-        // allowAnonLogging,
-        // contentVersion,
-        // panelizationSummary,
         imageLinks = {},
-        // language,
-        // previewLink,
-        // infoLink,
-        // canonicalVolumeLink,
-        // id,
         shelf
       }
     } = this.props;
