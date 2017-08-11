@@ -1,0 +1,1 @@
+export default (list, propName, value) => list.find((item) => item[propName] === value);

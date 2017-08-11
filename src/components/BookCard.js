@@ -28,7 +28,7 @@ class BookCard extends Component {
         // allowAnonLogging,
         // contentVersion,
         // panelizationSummary,
-        imageLinks,
+        imageLinks = {},
         // language,
         // previewLink,
         // infoLink,
