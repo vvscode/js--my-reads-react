@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import {search} from '../utils/BooksAPI';
+import {search, update} from '../utils/BooksAPI';
 import BookShelf from '../components/BookShelf';
 
 class SearchPage extends Component {
@@ -9,9 +9,21 @@ class SearchPage extends Component {
     results: []
   };
 
-  onInputChange({ target: { value }}) {
-    search(value)
-      .then((results) => this.setState({results: Array.isArray(results) ? results : []}));
+  updateBookShelf(book, shelf) {
+    update(book, shelf)
+      .then(() => this.setState({
+        results: this.state.results.map(item => item === book ? ({ ...book, shelf }) : item)
+      }))
+  }
+
+  onInputChange({target: {  
+      value
+    }}) {
+    search(value).then((results) => this.setState({
+      results: Array.isArray(results)
+        ? results
+        : []
+    }));
   }
 
   render() {
@@ -30,12 +42,22 @@ class SearchPage extends Component {
           However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
           you don't find a specific author or title. Every search is limited by search terms.
         */}
-            <input type="text" placeholder="Search by title or author" onChange={this.onInputChange.bind(this)} />
+            <input
+              type="text"
+              placeholder="Search by title or author"
+              onChange={this
+              .onInputChange
+              .bind(this)}/>
           </div>
         </div>
         <div className="search-books-results">
           <ol className="books-grid"></ol>
-          <BookShelf title={'Search results'} books={books}/>
+          <BookShelf
+            title={'Search results'}
+            books={books}
+            updateBookShelf={this
+            .updateBookShelf
+            .bind(this)}/>
         </div>
       </div>
     );
