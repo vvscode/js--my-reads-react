@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import BookShelf from '../components/BookShelf';
 import books from '../utils/Books_LIST.mock';
@@ -6,9 +7,7 @@ import separateByShelf from '../utils/separateByShelf';
 
 const booksByShelf = separateByShelf(books);
 
-console.log(booksByShelf);
-
-const BooksListPage = ({toggleSearchState}) => (
+const BooksListPage = () => (
   <div className="list-books">
     <div className="list-books-title">
       <h1>MyReads</h1>
@@ -21,7 +20,7 @@ const BooksListPage = ({toggleSearchState}) => (
       </div>
     </div>
     <div className="open-search">
-      <a onClick={toggleSearchState}>Add a book</a>
+      <Link to="/search">Add a book</Link>
     </div>
   </div>
 );
