@@ -1,9 +1,12 @@
 import React from 'react';
-// import * as BooksAPI from './utils/BooksAPI'
+import * as BooksAPI from './utils/BooksAPI'
 import './App.css';
 
-import SearchPage from './components/pages/SearchPage';
-import BooksListPage from './components/pages/BooksListPage';
+import SearchPage from './pages/SearchPage';
+import BooksListPage from './pages/BooksListPage';
+
+// todo: remove this
+window.BooksAPI = BooksAPI;
 
 class BooksApp extends React.Component {
   state = {
